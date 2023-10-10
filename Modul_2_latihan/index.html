@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENJUMLAHAN BILANGAN</title>
+</head>
+<body>
+
+    <h1>PENJUMLAHAN BILANGAN</h1>
+
+    <form id="kalkulator">
+        <row>
+            Bilangan pertama: <input type="number" id="bilangan1">
+            Bilangan kedua: <input type="number" id="bilangan2"><br><br>
+        </row>
+      
+        <input type="button" value="Jumlahkan" onclick="Jumlahkan()">
+        <input type="reset" value="Ulang" onclick="Ulang()">
+    </form>
+    <!-- <p>Hasil penjumlahan: <span id="hasil"></span></p> -->
+
+
+    <script>
+        function Jumlahkan() {
+            var bilangan1 = parseFloat(document.getElementById("bilangan1").value);
+            var bilangan2 = parseFloat(document.getElementById("bilangan2").value);
+            var hasil = bilangan1 + bilangan2;
+            // document.getElementById("hasil").innerHTML = hasil; 
+            alert(`hasil = ${hasil}`);      
+    }
+
+    function Ulang() {
+            document.getElementById('bilangan1').value = ''
+            document.getElementById('bilangan2').value = ''
+            document.getElementById("hasil").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>

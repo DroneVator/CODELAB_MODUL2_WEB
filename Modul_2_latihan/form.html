@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDASI</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="alamat"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #06a8ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Pendaftaran</h1>
+        <form id="registrationForm" onsubmit="return validateForm()" autocomplete="off">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="alamat" id="alamat">Alamat:</label>
+            <textarea cols="21", rows="5"></textarea><br><br>
+            <!-- <input type="text" id="alamat" name="alamat"> -->
+
+            <input type="submit" value="Daftar">
+
+            <!-- <table>
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td><input type="text" id="nama" name="nama"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td><textarea cols="21", rows="5" id="alamat"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Daftar"></td>
+                </tr>
+        
+            </table> -->
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            var alamat = document.getElementById("alamat").value;
+
+            if (nama === "" || email === "" || alamat === "") {
+                alert("Anda harus mengisi data dengan lengkap!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
